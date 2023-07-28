@@ -32,9 +32,9 @@ public:
     // Copy assignment operator
    ClapTrap& operator=(const ClapTrap& other);
 
-   void attack(const std::string &target);
-   void takeDamage(unsigned int amount);
-   void beRepaired(unsigned int amount);
+   virtual void attack(const std::string &target);
+   virtual void takeDamage(unsigned int amount);
+   virtual void beRepaired(unsigned int amount);
 
 	int getHp() const;
 	int getEnergy() const;

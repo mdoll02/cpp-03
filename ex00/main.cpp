@@ -17,9 +17,10 @@ int main() {
 	ClapTrap basic;
 	ClapTrap bob("Bob");
 	ClapTrap copyBob(bob);
-	ClapTrap assignBob = bob;
+	ClapTrap assignFred = ClapTrap("Fred");
 
 	bob.attack("a tree");
+	assignFred.attack("a rock");
 	bob.takeDamage(5);
 	std::cout << "Bob has " << bob.getHp() << " HP left" << std::endl;
 	bob.takeDamage(10);

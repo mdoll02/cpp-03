@@ -58,3 +58,31 @@ void FragTrap::highFivesGuys(void) {
 	}
 }
 
+void FragTrap::attack(const std::string &target) {
+	if (getEnergy() == 0) {
+		std::cout << "FragTrap " << getName() << " cant attack. He has no energy" << std::endl;
+		return ;
+	}
+	_setEnergy(getEnergy() - 1);
+	std::cout << "FragTrap " << getName() << " attacks ";
+	std::cout << target << " causing " << getDmg() << " damage " << std::endl;
+}
+
+void FragTrap::takeDamage(unsigned int amount) {
+	if (getHp() == 0 && amount != 0)
+		std::cout << "FragTrap " << getName() << " is already at 0 hp" << std::endl;
+	else {
+		_setHp(getHp() - amount);
+		std::cout << "FragTrap " << getName() << " has taken ";
+		std::cout << amount << " damage" << std::endl;
+	}
+}
+
+void FragTrap::beRepaired(unsigned int amount) {
+	if (static_cast<int>(getEnergy() - amount) < 0)
+		std::cout << "FragTrap " << getName() << " is too exhausted" << std::endl;
+	_setEnergy(getEnergy() - amount);
+	_setHp(getHp() + amount);
+	std::cout << "FragTrap " << getName() << " has repaired himself. He now has ";
+	std::cout << getHp() << " hp" << std::endl;
+}

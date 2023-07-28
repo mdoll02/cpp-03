@@ -86,7 +86,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (getEnergy() - amount < 0)
+	if (static_cast<int>(getEnergy() - amount) < 0)
 		std::cout << std::cout << "ClapTrap " << getName() << " is too exhausted" << std::endl;
 	_setEnergy(getEnergy() - amount);
 	_setHp(getHp() + amount);

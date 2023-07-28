@@ -16,10 +16,12 @@
 #include "FragTrap.hpp"
 
 int main() {
+	std::cout << "---------- Constructing ---------\n" << std::endl;
 	FragTrap fragTrap("FragTrap");
 	ScavTrap scavTrap("ScavTrap");
 	ClapTrap clapTrap("ClapTrap");
 
+	std::cout << "\n---------- Testing functions ---------\n" << std::endl;
 	fragTrap.attack("target");
 	fragTrap.takeDamage(10);
 	fragTrap.beRepaired(10);
@@ -34,4 +36,5 @@ int main() {
 	std::cout << fragTrap.getHp() << " hp" << std::endl;
 	std::cout << fragTrap.getEnergy() << " energy" << std::endl;
 	fragTrap.highFivesGuys();
+	std::cout << "\n---------- Deconstructing ---------\n" << std::endl;
 }
