@@ -17,9 +17,9 @@
 
 int main() {
 	std::cout << "---------- Constructing ---------\n" << std::endl;
-	FragTrap fragTrap("FragTrap");
-	ScavTrap scavTrap("ScavTrap");
-	ClapTrap clapTrap("ClapTrap");
+	FragTrap fragTrap("frag");
+	ScavTrap scavTrap("scav");
+	ClapTrap clapTrap("clap");
 
 	std::cout << "\n---------- Testing functions ---------\n" << std::endl;
 	fragTrap.attack("target");
